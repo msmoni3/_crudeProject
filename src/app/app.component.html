@@ -1,4 +1,48 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div >
+  <div class="row">
+  <form>
+      <div class="col-md-6">
+        <label for="inputEmail4">ID:</label>
+        <input type="text" class="form-control" id="id" placeholder="Email" #id>
+        <label for="inputEmail4">First Name</label>
+        <input type="text" class="form-control" id="inputEmail4" placeholder="First Name" #fname>
+      
+        <label for="inputPassword4">Last Name</label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name" #lname>
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity" #city>
+
+         
+    <button type="button" class="btn btn-primary" (click)= "addinfo(id ,fname , lname , city)">Add</button>
+    <button type="button" class="btn btn-primary" (click)= "saveinfo()">Save</button>
+        </div>
+        <div class="col-md-6">
+           <div class="container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">City</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor = "let emp of employeeDetail ;">
+                      <th scope="row">{{emp.id}}</th>
+                      <td>{{emp.fname}}</td>
+                      <td>{{emp.lname}}</td>
+                      <td>{{emp.city}}</td>
+                      <td><button type="button" class="btn btn-primary" (click)="delete()">X</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+           </div>
+
+        </div>
+
+    <!-- <button type="submit" class="btn btn-primary">Update</button> -->
+  </form>
+   </div>
+</div>
