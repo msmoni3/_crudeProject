@@ -26,9 +26,9 @@ export class AppComponent  {
 
   addinfo(id , fname, lname , city){
     this.employeeDetail.push()
-    // this.employeeDetail.push({
-    //   id: id.value
-    // })
+
+    // console.log(id1.value , fname.value, lname.value , city.value)
+
 
   }
 
