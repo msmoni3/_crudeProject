@@ -8,6 +8,8 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
 
+
+
   employeeDetail= [
     {
     id :'e1',
@@ -25,10 +27,9 @@ export class AppComponent  {
 
 
   addinfo(id , fname, lname , city){
-    this.employeeDetail.push()
-
-    // console.log(id1.value , fname.value, lname.value , city.value)
-
+    
+    this.employeeDetail.push({id , fname, lname , city })
+    console.log("without value" ,id , fname, lname , city)
 
   }
 
