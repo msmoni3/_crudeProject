@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { EmpservicesService } from './empservices.service';
 
 @Component({
   selector: 'my-app',
@@ -6,9 +7,11 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+
+  constructor(private empservice:EmpservicesService){
+
+  }
   name = 'Angular ' + VERSION.major;
-
-
 
   employeeDetail= [
     {
@@ -34,9 +37,11 @@ export class AppComponent  {
   }
 
   saveinfo(){
+      this.empservice.savedata(this.employeeDetail).subscribe((res)=>{
+        console.log(res)
+      })
 
   }
-
 
   delete(){
 
